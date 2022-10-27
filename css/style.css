@@ -1,0 +1,36 @@
+/* * GENERAL */
+body {
+    background-color: #000000f2;
+    font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* * SIDEBAR */
+.sidebar {
+    background-color: #fff;
+    position: fixed;
+    height: 100vh;
+    padding: 15px;
+}
+.sidebar-img {
+    width: 35px;
+}
+
+.links span {
+    cursor: pointer;
+}
+
+/* * MEALS */
+.meal {
+    overflow: hidden;
+    cursor: pointer;
+}
+.meal-overlay {
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    top: 100%;
+    transition: top 1s ease-in-out;
+}
+.meal:hover .meal-overlay {
+    top: 0px !important;
+}
