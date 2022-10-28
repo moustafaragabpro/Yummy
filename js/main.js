@@ -464,27 +464,3 @@ $(document).ready(function () {
         }
     }
 });
-
-// function userNameValid() {
-//     return /^[a-zA-Z ]+$/.test(userName.value)
-// }
-
-// function userEmailValid() {
-//     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(userEmail.value)
-// }
-
-// function userPhoneValid() {
-//     return /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(userPhone.value)
-// }
-
-// function userAgeValid() {
-//     return /^[1-9][0-9]?$|^100$/.test(userAge.value)
-// }
-
-// function userPasswordValid() {
-//     return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(userPassword.value)
-// }
-
-// function userRePasswordValid() {
-//     return userPassword.value == userRePassword.value
-// }
