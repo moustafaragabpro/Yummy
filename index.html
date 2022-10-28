@@ -10,58 +10,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
-    <body>
-        <!-- * Sidebar -->
-        <!-- <aside
-            class="d-flex justify-content-between position-fixed"
-            id="sidebar"
-        >
-            <div
-                id="sidebarMenu"
-                class="text-white p-4 d-flex flex-column bg-dark justify-content-between position-relative"
-            >
-                <ul class="nav flex-column">
-                    <li class="nav-item my-1" style="display: none">
-                        <a class="nav-link" aria-current="page" href="#"
-                            >Search</a
-                        >
-                    </li>
-                    <li class="nav-item my-1" style="display: none">
-                        <a class="nav-link" href="#categories">Categories</a>
-                    </li>
-                    <li class="nav-item my-1" style="display: none">
-                        <a class="nav-link" href="#area">Area</a>
-                    </li>
-                    <li class="nav-item my-1" style="display: none">
-                        <a class="nav-link" href="#ingredients">Ingredients</a>
-                    </li>
-                    <li class="nav-item my-1" style="display: none">
-                        <a class="nav-link" href="#contactUs">Contact Us</a>
-                    </li>
-                </ul>
-                <p class="text-muted">Copyright Â© 2019 All Rights Reserved.</p>
-            </div>
-            <div
-                id="side"
-                class="sidebar d-flex flex-column justify-content-between align-items-center position-relative"
-            >
-                <img src="images/logo.png" class="sidebar-img" alt="Logo" />
-                <div class="menu text-center" id="menu">
-                    <i class="fa-solid fa-bars fa-2x" id="menuIcon"></i>
-                    <!-- <i class="fa-solid fa-xmark fa-2x"></i> -->
-        <!--
-                </div>
-                <div class="links d-flex flex-column">
-                    <span>
-                        <i class="fas fa-globe"></i>
-                    </span>
-                    <span>
-                        <i class="fas fa-share-alt"></i>
-                    </span>
-                </div>
-            </div>
-        </aside> -->
-
+    <body class="pt-4">
         <!-- * Loading -->
         <div id="loading">
             <div class="sk-folding-cube">
@@ -72,8 +21,59 @@
             </div>
         </div>
 
+        <!-- * Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top bg-light d-sm-none">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"
+                    ><img
+                        src="images/logo.png"
+                        class="logo sidebar-img"
+                        alt="Logo"
+                /></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item my-1">
+                            <a
+                                class="nav-link"
+                                aria-current="page"
+                                href="#search"
+                                >Search</a
+                            >
+                        </li>
+                        <li class="nav-item my-1">
+                            <a class="nav-link" href="#categories"
+                                >Categories</a
+                            >
+                        </li>
+                        <li class="nav-item my-1">
+                            <a class="nav-link" href="#area">Area</a>
+                        </li>
+                        <li class="nav-item my-1">
+                            <a class="nav-link" href="#ingredients"
+                                >Ingredients</a
+                            >
+                        </li>
+                        <li class="nav-item my-1">
+                            <a class="nav-link" href="#contactUs">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <!-- * Sidebar -->
-        <div id="sidebar" class="d-flex position-fixed">
+        <div id="sidebar" class="position-fixed d-sm-flex d-none">
             <div class="sidebar sidebar-box p-3 bg-black" id="sidebarLinks">
                 <ul class="nav flex-column">
                     <li class="nav-item my-1">
@@ -121,19 +121,19 @@
 
         <!-- * MEALS -->
         <section class="meals py-5" id="mealsSection">
-            <div class="container w-75">
+            <div class="container">
                 <div class="row gy-4" id="meals"></div>
             </div>
         </section>
 
         <!-- * MEAL DETAILS -->
         <section id="mealDetailsSection" style="display: none">
-            <div class="container w-75 text-white" id="mealDetails"></div>
+            <div class="container text-white" id="mealDetails"></div>
         </section>
 
         <!-- * Search -->
         <section id="search" class="py-5" style="display: none">
-            <div class="container w-75">
+            <div class="container">
                 <div class="row gy-4">
                     <div class="col-sm-6">
                         <div class="input-item my-5">
@@ -163,28 +163,28 @@
 
         <!-- * Categories -->
         <section id="categories" class="py-5" style="display: none">
-            <div class="container w-75">
+            <div class="container">
                 <div class="row gy-4" id="category"></div>
             </div>
         </section>
 
         <!-- * Area -->
         <section id="area" class="py-5" style="display: none">
-            <div class="container w-75">
+            <div class="container">
                 <div class="row gy-4" id="areaBox"></div>
             </div>
         </section>
 
         <!-- * ingredients -->
         <section id="ingredients" class="py-5" style="display: none">
-            <div class="container w-75">
+            <div class="container">
                 <div class="row gy-4" id="ingredientsBox"></div>
             </div>
         </section>
 
         <!-- * Contact Us -->
         <section id="contactUs" class="py-5" style="display: none">
-            <div class="container w-75">
+            <div class="container">
                 <h2 class="text-white text-center my-5">ContacUs...</h2>
                 <div class="row gy-4" id="ingredientsBox">
                     <div class="col-sm-6">

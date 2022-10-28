@@ -121,6 +121,8 @@ body {
     width: 35px;
 }
 #sidebar {
+    top: 0;
+    left: 0;
     z-index: 9999;
 }
 .sidebar {
@@ -138,8 +140,8 @@ body {
     width: 60px;
 }
 
-.nav-link,
-.nav-link:hover {
+.sidebar .nav-link,
+.sidebar .nav-link:hover {
     color: #fff;
 }
 
@@ -163,4 +165,10 @@ body {
 }
 .meal:hover .meal-overlay {
     top: 0px !important;
+}
+
+.meal-main-img {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
 }
