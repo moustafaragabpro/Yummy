@@ -305,7 +305,7 @@ $(document).ready(function () {
         let areabox = ``;
         for (let i = 0; i < allAreas.length; i++) {
             areabox += `
-            <div class="col-6 text-white">
+            <div class="col-sm-6 col-md-4 col-lg-3 text-white">
                 <div class="area text-center" id="${allAreas[i].strArea}">
                     <i
                         class="fa-solid fa-city fa-3x text-warning mb-2"
@@ -349,8 +349,8 @@ $(document).ready(function () {
 
         for (let i = 0; i < 20; i++) {
             box += `
-                <div class="col-md-6">
-                    <div class="ingredient text-white text-center">
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="ingredient p-3 text-white text-center">
                         <i
                             class="fa-solid fa-bowl-food fa-4x text-success"
                         ></i>
