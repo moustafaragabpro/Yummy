@@ -12,140 +12,269 @@
     </head>
     <body>
         <!-- * Sidebar -->
-        <aside
-            class="sidebar d-flex flex-column justify-content-between align-items-center"
+        <!-- <aside
+            class="d-flex justify-content-between position-fixed"
+            id="sidebar"
         >
-            <img src="images/logo.png" class="sidebar-img" alt="Logo" />
-            <div class="menu" id="menu">
-                <i class="fa-solid fa-bars fa-2x"></i>
+            <div
+                id="sidebarMenu"
+                class="text-white p-4 d-flex flex-column bg-dark justify-content-between position-relative"
+            >
+                <ul class="nav flex-column">
+                    <li class="nav-item my-1" style="display: none">
+                        <a class="nav-link" aria-current="page" href="#"
+                            >Search</a
+                        >
+                    </li>
+                    <li class="nav-item my-1" style="display: none">
+                        <a class="nav-link" href="#categories">Categories</a>
+                    </li>
+                    <li class="nav-item my-1" style="display: none">
+                        <a class="nav-link" href="#area">Area</a>
+                    </li>
+                    <li class="nav-item my-1" style="display: none">
+                        <a class="nav-link" href="#ingredients">Ingredients</a>
+                    </li>
+                    <li class="nav-item my-1" style="display: none">
+                        <a class="nav-link" href="#contactUs">Contact Us</a>
+                    </li>
+                </ul>
+                <p class="text-muted">Copyright Â© 2019 All Rights Reserved.</p>
             </div>
-            <div class="links d-flex flex-column">
-                <span>
-                    <i class="fas fa-globe"></i>
-                </span>
-                <span>
-                    <i class="fas fa-share-alt"></i>
-                </span>
+            <div
+                id="side"
+                class="sidebar d-flex flex-column justify-content-between align-items-center position-relative"
+            >
+                <img src="images/logo.png" class="sidebar-img" alt="Logo" />
+                <div class="menu text-center" id="menu">
+                    <i class="fa-solid fa-bars fa-2x" id="menuIcon"></i>
+                    <!-- <i class="fa-solid fa-xmark fa-2x"></i> -->
+        <!--
+                </div>
+                <div class="links d-flex flex-column">
+                    <span>
+                        <i class="fas fa-globe"></i>
+                    </span>
+                    <span>
+                        <i class="fas fa-share-alt"></i>
+                    </span>
+                </div>
             </div>
-        </aside>
+        </aside> -->
+
+        <!-- * Loading -->
+        <div id="loading">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+
+        <!-- * Sidebar -->
+        <div id="sidebar" class="d-flex position-fixed">
+            <div class="sidebar sidebar-box p-3 bg-black" id="sidebarLinks">
+                <ul class="nav flex-column">
+                    <li class="nav-item my-1">
+                        <a class="nav-link" aria-current="page" href="#search"
+                            >Search</a
+                        >
+                    </li>
+                    <li class="nav-item my-1">
+                        <a class="nav-link" href="#categories">Categories</a>
+                    </li>
+                    <li class="nav-item my-1">
+                        <a class="nav-link" href="#area">Area</a>
+                    </li>
+                    <li class="nav-item my-1">
+                        <a class="nav-link" href="#ingredients">Ingredients</a>
+                    </li>
+                    <li class="nav-item my-1">
+                        <a class="nav-link" href="#contactUs">Contact Us</a>
+                    </li>
+                </ul>
+                <p class="text-muted">Copyright Â© 2019 All Rights Reserved.</p>
+            </div>
+            <div
+                class="sidebar sidebar-menu text-center bg-white align-items-center py-3"
+            >
+                <img
+                    src="images/logo.png"
+                    class="logo sidebar-img"
+                    alt="Logo"
+                />
+                <div class="text-center" id="menu">
+                    <i class="fa-solid fa-bars fa-2x" id="toggleMenuIcon"></i>
+                    <!-- <i class="fa-solid fa-xmark fa-2x"></i> -->
+                </div>
+                <div class="links d-flex flex-column">
+                    <span>
+                        <i class="fas fa-globe"></i>
+                    </span>
+                    <span>
+                        <i class="fas fa-share-alt"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
 
         <!-- * MEALS -->
-        <section class="meals pt-5 d-none" id="meals">
+        <section class="meals py-5" id="mealsSection">
             <div class="container w-75">
                 <div class="row gy-4" id="meals"></div>
             </div>
         </section>
 
         <!-- * MEAL DETAILS -->
-        <section id="mealDetails">
-            <div class="container text-white">
-                <div class="meal-header">
-                    <img
-                        src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
-                        alt="Meal"
-                        class=""
-                    />
-                    <h2 class="fw-bolder my-3">Cobra</h2>
+        <section id="mealDetailsSection" style="display: none">
+            <div class="container w-75 text-white" id="mealDetails"></div>
+        </section>
+
+        <!-- * Search -->
+        <section id="search" class="py-5" style="display: none">
+            <div class="container w-75">
+                <div class="row gy-4">
+                    <div class="col-sm-6">
+                        <div class="input-item my-5">
+                            <input
+                                type="text"
+                                id="mealNameInput"
+                                class="form-control bg-transparent border border-0 border-bottom text-white rounded-0"
+                                placeholder="Enter Meal Name"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-item my-5">
+                            <input
+                                type="text"
+                                id="mealLetterInput"
+                                maxlength="1"
+                                class="form-control bg-transparent border border-0 border-bottom text-white rounded-0"
+                                placeholder="Enter Meal Letter"
+                            />
+                        </div>
+                    </div>
                 </div>
+                <div class="row gy-4" id="searchedMeals"></div>
+            </div>
+        </section>
 
-                <div class="desc">
-                    <h2>Instructions</h2>
-                    <p>
-                        STEP 1 TO MAKE SUSHI ROLLS: Pat out some rice. Lay a
-                        nori sheet on the mat, shiny-side down. Dip your hands
-                        in the vinegared water, then pat handfuls of rice on top
-                        in a 1cm thick layer, leaving the furthest edge from you
-                        clear. STEP 2 Spread over some Japanese mayonnaise. Use
-                        a spoon to spread out a thin layer of mayonnaise down
-                        the middle of the rice. STEP 3 Add the filling. Get your
-                        child to top the mayonnaise with a line of their
-                        favourite fillings – here we’ve used tuna and cucumber.
-                        STEP 4 Roll it up. Lift the edge of the mat over the
-                        rice, applying a little pressure to keep everything in a
-                        tight roll. STEP 5 Stick down the sides like a stamp.
-                        When you get to the edge without any rice, brush with a
-                        little water and continue to roll into a tight roll.
-                        STEP 6 Wrap in cling film. Remove the mat and roll
-                        tightly in cling film before a grown-up cuts the sushi
-                        into thick slices, then unravel the cling film. STEP 7
-                        TO MAKE PRESSED SUSHI: Layer over some smoked salmon.
-                        Line a loaf tin with cling film, then place a thin layer
-                        of smoked salmon inside on top of the cling film. STEP 8
-                        Cover with rice and press down. Press about 3cm of rice
-                        over the fish, fold the cling film over and press down
-                        as much as you can, using another tin if you have one.
-                        STEP 9 Tip it out like a sandcastle. Turn block of sushi
-                        onto a chopping board. Get a grown-up to cut into
-                        fingers, then remove the cling film. STEP 10 TO MAKE
-                        SUSHI BALLS: Choose your topping. Get a small square of
-                        cling film and place a topping, like half a prawn or a
-                        small piece of smoked salmon, on it. Use damp hands to
-                        roll walnut-sized balls of rice and place on the
-                        topping. STEP 11 Make into tight balls. Bring the
-                        corners of the cling film together and tighten into
-                        balls by twisting it up, then unwrap and serve.
-                    </p>
+        <!-- * Categories -->
+        <section id="categories" class="py-5" style="display: none">
+            <div class="container w-75">
+                <div class="row gy-4" id="category"></div>
+            </div>
+        </section>
 
-                    <p>
-                        <span class="fw-bold">Area : </span>
-                        <span id="area">Japanese</span>
-                    </p>
-                    <p class="p-0">
-                        <span class="fw-bold">Category : </span>
-                        <span id="area">Japanese</span>
-                    </p>
+        <!-- * Area -->
+        <section id="area" class="py-5" style="display: none">
+            <div class="container w-75">
+                <div class="row gy-4" id="areaBox"></div>
+            </div>
+        </section>
 
-                    <h2 class="mt-4 mb-3">Recipes :</h2>
-                    <div id="recipes">
-                        <span
-                            class="alert alert-success py-1 me-2 d-inline-block"
-                        >
-                            1 cup Lentils</span
-                        >
-                        <span
-                            class="alert alert-success py-1 me-2 d-inline-block"
-                        >
-                            1 cup Lentils</span
-                        >
-                        <span
-                            class="alert alert-success py-1 me-2 d-inline-block"
-                        >
-                            1 cup Lentils</span
-                        >
-                        <span
-                            class="alert alert-success py-1 me-2 d-inline-block"
-                        >
-                            1 cup Lentils</span
-                        >
-                        <span
-                            class="alert alert-success py-1 me-2 d-inline-block"
-                        >
-                            1 cup Lentils</span
-                        >
-                        <span
-                            class="alert alert-success py-1 me-2 d-inline-block"
-                        >
-                            1 cup Lentils</span
-                        >
-                        <span
-                            class="alert alert-success py-1 me-2 d-inline-block"
-                        >
-                            1 cup Lentils</span
-                        >
+        <!-- * ingredients -->
+        <section id="ingredients" class="py-5" style="display: none">
+            <div class="container w-75">
+                <div class="row gy-4" id="ingredientsBox"></div>
+            </div>
+        </section>
+
+        <!-- * Contact Us -->
+        <section id="contactUs" class="py-5" style="display: none">
+            <div class="container w-75">
+                <h2 class="text-white text-center my-5">ContacUs...</h2>
+                <div class="row gy-4" id="ingredientsBox">
+                    <div class="col-sm-6">
+                        <div class="input-item">
+                            <input
+                                type="text"
+                                id="nameInput"
+                                class="form-control bg-transparent border border-0 border-bottom text-white rounded-0"
+                                placeholder="Enter Your Name"
+                            />
+                            <p class="alert alert-danger py-1 my-2 d-none">
+                                Special Characters and Numbers not allowed
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-item">
+                            <input
+                                type="email"
+                                id="emailInput"
+                                class="form-control bg-transparent border border-0 border-bottom text-white rounded-0"
+                                placeholder="Enter Your Email"
+                            />
+                            <p class="alert alert-danger py-1 my-2 d-none">
+                                Enter valid email. *Ex: xxx@yyy.zzz
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-item">
+                            <input
+                                type="text"
+                                id="phoneInput"
+                                class="form-control bg-transparent border border-0 border-bottom text-white rounded-0"
+                                placeholder="Enter Phone Number"
+                            />
+                            <p class="alert alert-danger py-1 my-2 d-none">
+                                Enter valid Egyption Phone Number
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-item">
+                            <input
+                                type="number"
+                                id="ageInput"
+                                class="form-control bg-transparent border border-0 border-bottom text-white rounded-0"
+                                placeholder="Enter Phone Number"
+                            />
+                            <p class="alert alert-danger py-1 my-2 d-none">
+                                Enter valid Age
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-item">
+                            <input
+                                type="password"
+                                id="passwordInput"
+                                class="form-control bg-transparent border border-0 border-bottom text-white rounded-0"
+                                placeholder="Enter Password"
+                            />
+                            <p class="alert alert-danger py-1 my-2 d-none">
+                                Enter valid password *Minimum eight characters,
+                                at least one letter and one number:*
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-item">
+                            <input
+                                type="password"
+                                id="passwordConfInput"
+                                class="form-control bg-transparent border border-0 border-bottom text-white rounded-0"
+                                placeholder="Confirm Password"
+                            />
+                            <p class="alert alert-danger py-1 my-2 d-none">
+                                Enter valid Password Confimation
+                            </p>
+                        </div>
                     </div>
 
-                    <h2 class="mt-4 mb-3">Tags :</h2>
-                    <div id="tags">
-                        <span
-                            class="alert alert-warning py-1 me-2 d-inline-block"
+                    <div class="col-sm-6">
+                        <button
+                            class="btn btn-primary d-block w-100"
+                            disabled
+                            id="submit"
                         >
-                            1 cup Lentils</span
-                        >
-                    </div>
-
-                    <div class="meal-links mt-2 mb-5">
-                        <a href="#" class="btn btn-success">Source</a>
-                        <a href="#" class="btn btn-danger">Youtube</a>
+                            Submit
+                        </button>
                     </div>
                 </div>
             </div>
